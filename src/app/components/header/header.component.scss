@@ -11,29 +11,9 @@ section {
   display: table;
 }
 
-// @font-face {
-//   font-family: Cyber;
-//   src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
-//   font-display: swap;
-// }
-
 * {
   box-sizing: border-box;
 }
-
-// body {
-//   display: flex;
-//   align-items: center;
-//   flex-direction: column;
-//   justify-content: center;
-//   min-height: 100vh;
-//   font-family: 'Cyber', sans-serif;
-//   background: linear-gradient(90deg, #f5ed00 70%, #e6de00 70%), #fff700;
-// }
-
-// body .cybr-btn + .cybr-btn {
-//   margin-top: 2rem;
-// }
 
 .cybr-btn {
   z-index: 999;
@@ -141,7 +121,6 @@ section {
     8% 80%,
     0 70%
   );
-  // font-family: "Cyber", sans-serif;
   color: var(--color);
   cursor: pointer;
   background: transparent;
@@ -305,7 +284,7 @@ section {
   --primary-hue: 260;
 }
 
-$input-bg-color: #69F0AE;
+$input-bg-color: #69f0ae;
 $input-text-color: #121212;
 $animation-bounce: cubic-bezier(0.4, -1, 0.6, 2);
 
@@ -327,7 +306,7 @@ $animation-bounce: cubic-bezier(0.4, -1, 0.6, 2);
 // Search Box
 .search-box {
   position: relative;
-  
+
   &__input {
     background-color: $input-bg-color;
     caret-color: $input-bg-color;
@@ -400,9 +379,9 @@ $animation-bounce: cubic-bezier(0.4, -1, 0.6, 2);
 }
 
 button.mat-button {
-  font-weight: 900; 
-  font-size: 15px; 
-  line-height: 21px; 
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 21px;
   color: #909497;
 }
 
