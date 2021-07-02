@@ -1,0 +1,32 @@
+<mat-toolbar color="accent">
+  <span><img src="../../../assets/logo.webp" /></span>
+  <div
+    *ngIf="!isMobile"
+    style="margin-left: 20px; margin-right: 20px"
+    class="search-box"
+  >
+    <input
+      class="search-box__input"
+      type="text"
+      oninput="this.setAttribute('value',this.value)"
+    />
+    <i></i>
+  </div>
+
+  <span class="example-spacer"></span>
+  <mat-divider></mat-divider>
+  <section *ngIf="!isMobile">
+    <button class="cybr-btn">
+      SEI UN INFLUENCER<span aria-hidden>_</span>
+      <span aria-hidden class="cybr-btn__glitch">SEI UN INFLUENCER</span>
+      <span aria-hidden class="cybr-btn__tag">SUBSCRIBE</span>
+    </button>
+    <button style="margin-left: 20px; margin-right: 20px" class="cybr-btn">
+      ENTRA IN VIRTOOTE<span aria-hidden>_</span>
+      <span aria-hidden class="cybr-btn__glitch">ENTRA IN VIRTOOTE</span>
+      <span aria-hidden class="cybr-btn__tag">REGISTER</span>
+    </button>
+  </section>
+  <button mat-button>HOW IT WORKS</button>
+  <button mat-button>LOGIN</button>
+</mat-toolbar>

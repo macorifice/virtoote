@@ -1,0 +1,92 @@
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.example-card {
+  max-width: 400px;
+  background-color: #9C27B0;
+}
+
+.cardDescription {
+  font-style: oblique;
+}
+
+.example-header-image1 {
+  background-image: url('https://static.wixstatic.com/media/8e48bf_af10d8bd7837407382b4ef9ce4c11297~mv2.jpeg/v1/crop/x_100,y_24,w_209,h_209/fill/w_132,h_132,al_c,q_80,usm_0.66_1.00_0.01/WhatsApp%20Image%202021-05-04%20at%2018_54_18_jp.webp');
+  background-size: cover;
+}
+
+.example-header-image2 {
+  background-image: url('https://static.wixstatic.com/media/8e48bf_8f762f7244fb4eefb4cb1096b838fc29~mv2.jpeg/v1/fill/w_132,h_132,al_c,q_80,usm_0.66_1.00_0.01/WhatsApp%20Image%202021-05-22%20at%2009_45_13_jp.webp');
+  background-size: cover;
+}
+
+.example-header-image3 {
+  background-image: url('https://static.wixstatic.com/media/8e48bf_9169d5b529e64911a16fa096b27f685c~mv2.png/v1/fill/w_135,h_134,al_c,q_85,usm_0.66_1.00_0.01/82975427_2622018024551857_26541928214513.webp');
+  background-size: cover;
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 1%;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #ffffff;
+  margin-top: 15px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.title-black {
+  color: #34495E;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
