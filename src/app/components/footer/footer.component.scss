@@ -9,3 +9,18 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+button.mat-button {
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 21px;
+  color: #909497;
+}
+
+button.mat-button:hover {
+  font-size: medium;
+  transform-origin: top;
+  transition: 0.5s;
+  color: #909497;
+}
+

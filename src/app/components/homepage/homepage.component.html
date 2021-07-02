@@ -19,28 +19,30 @@
   </mat-grid-tile>
 </mat-grid-list> -->
 
-<div *ngIf="isMobile">
-  <h2 style="padding: 5%; font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
+<div style="padding: 5%;"  *ngIf="!loading && isMobile">
+  <h2 style="font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
     Una piattaforma di live streaming per la condivisione di conoscenza
   </h2>
-  <h4 style="padding: 5%; font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff;">
+  <h4 style="font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff;">
     Pianifica videochiamate 1:1 con esperti, creators e mentors: ottieni
     risposte, stimoli e consigli per crescere
   </h4>
+  <mat-divider></mat-divider>
 </div>
 
-<div *ngIf="!isMobile">
-  <h2 style="padding: 1%; font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
+<div style="padding: 3%;" *ngIf="!loading &&!isMobile">
+  <h2 style="font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
     Una piattaforma di live streaming per la condivisione di conoscenza
   </h2>
-  <h4 style="padding: 1%; font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff;">
+  <h4 style="font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff;">
     Pianifica videochiamate 1:1 con esperti, creators e mentors: ottieni
     risposte, stimoli e consigli per crescere
   </h4>
+  <mat-divider></mat-divider>
 </div>
 
 
-<mat-divider></mat-divider>
+
 
 <div *ngIf="!loading" class="cards-list">
   <div class="card 1">
@@ -94,42 +96,41 @@
     </div>
   </div>
 
-  <div class="card 2">
-    <div class="card_image">
-      <img
-        src="https://media.giphy.com/media/l0IylR4JqKHLjaP60/giphy.gif"
-      />
-    </div>
-    <div class="card_title title-black">
-      <p>Tizio Caio</p>
-    </div>
-  </div>
 
-  <div class="card 3">
-    <div class="card_image">
-      <img src="https://media.giphy.com/media/Ms0GsGq6lORnq/giphy.gif" />
-    </div>
-    <div class="card_title title-black">
-      <p>Mario Rossi</p>
-    </div>
-  </div>
 
-  <div class="card 4">
-    <div class="card_image">
-      <img
-        src="https://media.giphy.com/media/kvu3mUFYobXqyYEdMY/giphy.gif"
-      />
-    </div>
-    <div class="card_title title-black">
-      <p>Padre Pio</p>
-    </div>
-  </div>
 </div>
 
 <div *ngIf="!loading" class="cards-list">
-  <div *ngIf="!isMobile">
-    <h2 style="padding: 1%; font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
+    <h2 style="padding: 5%; margin-top: 5%; font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
       Top sellers 
     </h2>
-  </div>
+    <div class="card 2">
+      <div class="card_image">
+        <img
+          src="https://media.giphy.com/media/l0IylR4JqKHLjaP60/giphy.gif"
+        />
+      </div>
+      <div class="card_title title-black">
+        <p>Tizio Caio</p>
+      </div>
+    </div>
+    <div class="card 3">
+      <div class="card_image">
+        <img src="https://media.giphy.com/media/Ms0GsGq6lORnq/giphy.gif" />
+      </div>
+      <div class="card_title title-black">
+        <p>Mario Rossi</p>
+      </div>
+    </div>
+  
+    <div class="card 4">
+      <div class="card_image">
+        <img
+          src="https://media.giphy.com/media/kvu3mUFYobXqyYEdMY/giphy.gif"
+        />
+      </div>
+      <div class="card_title title-black">
+        <p>Padre Pio</p>
+      </div>
+    </div>
 </div>

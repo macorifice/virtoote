@@ -1,4 +1,4 @@
-<mat-toolbar class="footer" color="accent">
+<!-- <mat-toolbar class="footer" color="accent">
   <span class="example-spacer"></span>
   <mat-divider></mat-divider>
   <button
@@ -43,4 +43,89 @@
   >
     <mat-icon svgIcon="share"></mat-icon>
   </button>
-</mat-toolbar>
+</mat-toolbar> -->
+<div style="padding: 3%;" *ngIf="!loading && !isMobile">
+  <mat-divider></mat-divider>
+  <mat-grid-list cols="4" rowHeight="50px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+    >
+      <div *ngIf="tile.id === 2">
+        <div
+          style="
+            margin-bottom: 3%;
+            float: inline-start;
+            font-weight: 900;
+            font-size: 15px;
+            line-height: 21px;
+            color: #909497;
+          "
+        >
+          Get the latest updates
+        </div>
+  
+        <input
+          style="
+            border-radius: 4em;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: transparent;
+            font-weight: 500;
+            flex-grow: 1;
+            font-size: 100%;
+            font-weight: 900;
+            font-size: 15px;
+            line-height: 21px;
+            color: #909497;
+          "
+          inputmode="email"
+          placeholder="Your e-mail"
+          type="text"
+        />
+        <button mat-button>SUBSCRIBE</button>
+      </div>
+  
+      <div>
+        <button
+          *ngIf="tile.id === 2"
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with share icon"
+        >
+          <mat-icon svgIcon="facebook"></mat-icon>
+        </button>
+  
+        <button
+          *ngIf="tile.id === 2"
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with share icon"
+        >
+          <mat-icon svgIcon="instagram"></mat-icon>
+        </button>
+      </div>
+  
+      <button *ngIf="tile.id == 3" mat-button>COOKIE POLICY</button>
+      <button *ngIf="tile.id == 3" mat-button>PRIVACY POLICY</button>
+      <div
+        style="
+          font-weight: 900;
+          font-size: 15px;
+          line-height: 21px;
+          color: #909497;
+        "
+        *ngIf="tile.id === 4"
+      >
+        © Virtoote, Inc. All rights reserved.
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>  
+</div>
+<div style="margin-top: 5%; padding: 5%;             float: inline-start;
+font-weight: 900;
+font-size: 15px;
+line-height: 21px;
+color: #909497;" *ngIf="!loading && isMobile">
+  © Virtoote, Inc. All rights reserved.
+</div>
