@@ -1,18 +1,5 @@
 <mat-toolbar color="accent">
   <span><img src="../../../assets/logo.webp" /></span>
-  <div
-    *ngIf="!isMobile"
-    style="margin-left: 20px; margin-right: 20px"
-    class="search-box"
-  >
-    <input
-      class="search-box__input"
-      type="text"
-      oninput="this.setAttribute('value',this.value)"
-    />
-    <i></i>
-  </div>
-
   <span class="example-spacer"></span>
   <mat-divider></mat-divider>
   <section *ngIf="!isMobile">
@@ -35,7 +22,7 @@
     >
       <mat-icon>more_vert</mat-icon>
     </button>
-    <mat-menu #menu="matMenu">
+    <mat-menu class="customize" #menu="matMenu">
       <a mat-menu-item href="#">
         <mat-icon>workspaces</mat-icon>
         <span>HOW IT WORKS</span>

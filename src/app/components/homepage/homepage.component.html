@@ -1,23 +1,4 @@
 <mat-spinner color="accent" class="center" *ngIf="loading"></mat-spinner>
-<!-- <mat-grid-list *ngIf="!loading" cols="4" rowHeight="100px">
-  <mat-grid-tile
-    *ngFor="let tile of tiles"
-    [colspan]="tile.cols"
-    [rowspan]="tile.rows"
-    [style.background]="tile.color"
-  >
-    <div *ngIf="tile.id === 1">
-      <h2 style="font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
-        Una piattaforma di live streaming per la condivisione di conoscenza
-      </h2>
-      <h4 style="font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff;">
-        Pianifica videochiamate 1:1 con esperti, creators e mentors: ottieni
-        risposte, stimoli e consigli per crescere
-      </h4>
-      <mat-divider></mat-divider>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list> -->
 
 <div style="padding: 5%" *ngIf="!loading && isMobile">
   <h2
@@ -34,14 +15,11 @@
   <mat-divider></mat-divider>
 
   <div class="searchBox">
-
-    <input class="searchInput"type="text" name="" placeholder="Search">
+    <input class="searchInput" type="text" name="" placeholder="Search" />
     <button class="searchButton" href="#">
-        <i class="material-icons">
-            search
-        </i>
+      <i class="material-icons"> search </i>
     </button>
-</div>
+  </div>
 </div>
 
 <div style="padding: 3%" *ngIf="!loading && !isMobile">
@@ -57,6 +35,12 @@
     risposte, stimoli e consigli per crescere
   </h4>
   <mat-divider></mat-divider>
+  <div class="searchBox">
+    <input class="searchInput" type="text" name="" placeholder="Search" />
+    <button class="searchButton" href="#">
+      <i class="material-icons"> search </i>
+    </button>
+  </div>
 </div>
 
 <div *ngIf="!loading" class="cards-list">

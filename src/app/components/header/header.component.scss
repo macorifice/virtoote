@@ -391,3 +391,7 @@ button.mat-button:hover {
   transition: 0.5s $animation-bounce;
   color: #909497;
 }
+
+::ng-deep .customize {
+  background: #121212;
+}
