@@ -10,18 +10,36 @@
   flex: 1 1 auto;
 }
 
-button.mat-button {
+.linkButton {
   font-weight: 900;
   font-size: 15px;
   line-height: 21px;
   color: #909497;
+  text-decoration: none;
+  margin: auto;
 }
 
-button.mat-button:hover {
+.linkButton:hover {
   font-size: medium;
   transform-origin: top;
   transition: 0.5s;
   color: #909497;
+}
+
+.subscribeButton {
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 21px;
+  color: #69F0AE;
+  text-decoration: none;
+  margin: auto;
+}
+
+.subscribeButton:hover {
+  font-size: medium;
+  transform-origin: top;
+  transition: 0.5s;
+  color: #69F0AE;
 }
 
 .example-form {
@@ -32,4 +50,25 @@ button.mat-button:hover {
 
 .example-full-width {
   width: 100%;
+}
+
+.copyright {
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 21px;
+  color: #909497;
+}
+
+.copyright-mobile {
+  margin-top: 5%;
+  padding: 5%;
+  float: inline-start;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 21px;
+  color: #909497;
+}
+
+p {
+  text-align: center;
 }

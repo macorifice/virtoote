@@ -19,51 +19,106 @@
   </mat-grid-tile>
 </mat-grid-list> -->
 
-<div style="padding: 5%;"  *ngIf="!loading && isMobile">
-  <h2 style="font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
+<div style="padding: 5%" *ngIf="!loading && isMobile">
+  <h2
+    style="font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff"
+  >
     Una piattaforma di live streaming per la condivisione di conoscenza
   </h2>
-  <h4 style="font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff;">
+  <h4
+    style="font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff"
+  >
     Pianifica videochiamate 1:1 con esperti, creators e mentors: ottieni
     risposte, stimoli e consigli per crescere
   </h4>
   <mat-divider></mat-divider>
 </div>
 
-<div style="padding: 3%;" *ngIf="!loading &&!isMobile">
-  <h2 style="font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
+<div style="padding: 3%" *ngIf="!loading && !isMobile">
+  <h2
+    style="font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff"
+  >
     Una piattaforma di live streaming per la condivisione di conoscenza
   </h2>
-  <h4 style="font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff;">
+  <h4
+    style="font-weight: 900; line-height: 21px; font-size: 15px; color: #ffffff"
+  >
     Pianifica videochiamate 1:1 con esperti, creators e mentors: ottieni
     risposte, stimoli e consigli per crescere
   </h4>
   <mat-divider></mat-divider>
 </div>
-
-
-
 
 <div *ngIf="!loading" class="cards-list">
-  <div class="card 1">
+  <mat-card class="card 1">
     <div class="card_image">
-      <img
-        src="https://media.giphy.com/media/YRzQnWzbn4WIxd3ZYx/giphy.gif"
-      />
+      <img src="https://media.giphy.com/media/YRzQnWzbn4WIxd3ZYx/giphy.gif" />
     </div>
-    <div class="card_title title-black">
-      <p style="font-weight: 900; line-height: 25px; font-size: 18px;">Simone Sorte</p>
+    <div class="card_title">
+      <p>Digital Marketing</p>
     </div>
-  </div>
+    <div class="card_subtitle">
+      <p>Simone Sorte</p>
+    </div>
+  </mat-card>
 
-  <div class="card 2">
+  <mat-card class="card 2">
     <div class="card_image">
-      <img
-        src="https://media.giphy.com/media/xTiQyw99MYXMazEZoc/giphy.gif"
-      />
+      <img src="https://media.giphy.com/media/xTiQyw99MYXMazEZoc/giphy.gif" />
     </div>
-    <div class="card_title title-black">
-      <p style="font-weight: 900; line-height: 25px; font-size: 18px;">Marinela Marku</p>
+    <div class="card_title">
+      <p>Social Media Manager</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Marinela Marku</p>
+    </div>
+  </mat-card>
+
+  <mat-card class="card 3">
+    <div class="card_image">
+      <img src="https://media.giphy.com/media/mwwEcxbodLHIk/giphy.gif" />
+    </div>
+    <div class="card_title">
+      <p>Marketing</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Alessandro Martelli</p>
+    </div>
+  </mat-card>
+
+  <mat-card class="card 4">
+    <div class="card_image">
+      <img src="https://media.giphy.com/media/lXiRzPb8C5JTJcfPq/giphy.gif" />
+    </div>
+    <div class="card_title">
+      <p>Programming</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Stefano Di Cecco</p>
+    </div>
+  </mat-card>
+
+  <!-- <div class="card 1">
+    <div class="card_image">
+      <img src="https://media.giphy.com/media/YRzQnWzbn4WIxd3ZYx/giphy.gif" />
+    </div>
+    <div class="card_title">
+      <p>Digital Marketing</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Simone Sorte</p>
+    </div>
+  </div> -->
+
+  <!-- <div class="card 2">
+    <div class="card_image">
+      <img src="https://media.giphy.com/media/xTiQyw99MYXMazEZoc/giphy.gif" />
+    </div>
+    <div class="card_title">
+      <p>Social Media Manager</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Marinela Marku</p>
     </div>
   </div>
 
@@ -71,66 +126,87 @@
     <div class="card_image">
       <img src="https://media.giphy.com/media/mwwEcxbodLHIk/giphy.gif" />
     </div>
-    <div class="card_title title-black">
-      <p style="font-weight: 900; line-height: 25px; font-size: 18px;">Alessandro Martelli</p>
+    <div class="card_title">
+      <p>Marketing</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Alessandro Martelli</p>
     </div>
   </div>
-  
+
   <div class="card 4">
     <div class="card_image">
       <img src="https://media.giphy.com/media/lXiRzPb8C5JTJcfPq/giphy.gif" />
     </div>
-    <div class="card_title title-black">
+    <div class="card_title">
+      <p>Programming</p>
+    </div>
+    <div class="card_subtitle">
       <p>Stefano Di Cecco</p>
     </div>
   </div>
 
   <div class="card 1">
     <div class="card_image">
-      <img
-        src="https://media.giphy.com/media/lKKXOCVviOAXS/giphy.gif"
-      />
+      <img src="https://media.giphy.com/media/lKKXOCVviOAXS/giphy.gif" />
     </div>
-    <div class="card_title title-black">
+
+    <div class="card_title">
+      <p>Languages</p>
+    </div>
+    <div class="card_subtitle">
       <p>Pinco Pallino</p>
     </div>
   </div>
-
-
-
 </div>
 
 <div *ngIf="!loading" class="cards-list">
-    <h2 style="padding: 5%; margin-top: 5%; font-weight: 900; line-height: 41px; font-size: 30px; color: #ffffff;">
-      Top sellers 
-    </h2>
-    <div class="card 2">
-      <div class="card_image">
-        <img
-          src="https://media.giphy.com/media/l0IylR4JqKHLjaP60/giphy.gif"
-        />
-      </div>
-      <div class="card_title title-black">
-        <p>Tizio Caio</p>
-      </div>
+  <h2
+    style="
+      padding: 5%;
+      margin-top: 5%;
+      font-weight: 900;
+      line-height: 41px;
+      font-size: 30px;
+      color: #ffffff;
+    "
+  >
+    Top sellers
+  </h2>
+  <div class="card 2">
+    <div class="card_image">
+      <img src="https://media.giphy.com/media/l0IylR4JqKHLjaP60/giphy.gif" />
     </div>
-    <div class="card 3">
-      <div class="card_image">
-        <img src="https://media.giphy.com/media/Ms0GsGq6lORnq/giphy.gif" />
-      </div>
-      <div class="card_title title-black">
-        <p>Mario Rossi</p>
-      </div>
+
+    <div class="card_title">
+      <p>Arts</p>
     </div>
-  
-    <div class="card 4">
-      <div class="card_image">
-        <img
-          src="https://media.giphy.com/media/kvu3mUFYobXqyYEdMY/giphy.gif"
-        />
-      </div>
-      <div class="card_title title-black">
-        <p>Padre Pio</p>
-      </div>
+    <div class="card_subtitle">
+      <p>Tizio Caio</p>
     </div>
+  </div>
+  <div class="card 3">
+    <div class="card_image">
+      <img src="https://media.giphy.com/media/Ms0GsGq6lORnq/giphy.gif" />
+    </div>
+
+    <div class="card_title">
+      <p>Politics</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Mario Rossi</p>
+    </div>
+  </div>
+
+  <div class="card 4">
+    <div class="card_image">
+      <img src="https://media.giphy.com/media/kvu3mUFYobXqyYEdMY/giphy.gif" />
+    </div>
+    <div class="card_title">
+      <p>Religion</p>
+    </div>
+    <div class="card_subtitle">
+      <p>Padre Pio</p>
+    </div>
+  </div> -->
 </div>
