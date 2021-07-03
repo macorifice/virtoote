@@ -32,7 +32,16 @@
     risposte, stimoli e consigli per crescere
   </h4>
   <mat-divider></mat-divider>
-  <form style="margin-top: 5%; margin-left: 20px;" class="search-box-mobile"><input type="text" placeholder=" " /><button type="reset"></button></form>
+
+  <div class="searchBox">
+
+    <input class="searchInput"type="text" name="" placeholder="Search">
+    <button class="searchButton" href="#">
+        <i class="material-icons">
+            search
+        </i>
+    </button>
+</div>
 </div>
 
 <div style="padding: 3%" *ngIf="!loading && !isMobile">
