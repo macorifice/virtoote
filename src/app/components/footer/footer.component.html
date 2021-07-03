@@ -63,27 +63,17 @@
             color: #909497;
           "
         >
-          Get the latest updates
+          
         </div>
   
-        <input
-          style="
-            border-radius: 4em;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: transparent;
-            font-weight: 500;
-            flex-grow: 1;
-            font-size: 100%;
-            font-weight: 900;
-            font-size: 15px;
-            line-height: 21px;
-            color: #909497;
-          "
-          inputmode="email"
-          placeholder="Your e-mail"
-          type="text"
-        />
-        <button mat-button>SUBSCRIBE</button>
+        <form class="example-form">
+          <mat-form-field color="accent">
+            <mat-label>Get the latest updates</mat-label>
+            <input placeholder="Your e-mail" matInput value="">
+          </mat-form-field>
+          <button mat-button>SUBSCRIBE</button>
+        </form>
+        
       </div>
   
       <div>
