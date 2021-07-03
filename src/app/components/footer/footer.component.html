@@ -49,6 +49,13 @@
 <div class="copyright-mobile" *ngIf="!loading && isMobile">
   <div>
     <p>
+      <mat-form-field color="accent">
+        <mat-label>Get the latest updates</mat-label>
+        <input placeholder="Your e-mail" matInput value="" />
+      </mat-form-field>
+      <button class="subscribeButton" mat-button>SUBSCRIBE</button>
+    </p>
+    <p>
       <a href="https://www.facebook.com/Virtoote-101245872152686">
         <mat-icon svgIcon="facebook"></mat-icon>
       </a>
@@ -57,14 +64,5 @@
       </a>
     </p>
     <p class="copyright">© Virtoote, Inc. All rights reserved.</p>
-
-    <p>
-      <mat-form-field color="accent">
-        <mat-label>Get the latest updates</mat-label>
-        <input placeholder="Your e-mail" matInput value="" />
-      </mat-form-field>
-      <button class="subscribeButton" mat-button>SUBSCRIBE</button>
-    </p>
-    
   </div>
 </div>
