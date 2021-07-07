@@ -20,6 +20,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { HowItWorksComponent } from './components/how-it-works/how-it-works.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LoginComponent } from './components/login/login.component';
     HomepageComponent,
     HowItWorksComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
