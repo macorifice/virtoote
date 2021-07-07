@@ -21,21 +21,36 @@
 
     <div class="content__submit">
       <button type="button" class="button">Sign up</button>
-      <div class="button google-button">
+      <!-- <div class="button google-button">
         <div class="google-button__google-icon"></div>
         <p class="no-select">Sign up with Google</p>
+      </div> -->
+      <p class="social-text">Or Sign up with social platforms</p>
+      <div class="social-media">
+        <a href="#" class="social-icon">
+          <mat-icon svgIcon="facebook"></mat-icon>
+        </a>
+        <a href="#" class="social-icon">
+          <mat-icon svgIcon="twitter"></mat-icon>
+        </a>
+        <a href="#" class="social-icon">
+          <mat-icon svgIcon="google"></mat-icon>
+        </a>
+        <a href="#" class="social-icon">
+          <mat-icon svgIcon="linkedin"></mat-icon>
+        </a>
       </div>
       <div class="content__submit--line"></div>
       <p>
         Already have an account?
-        <a href="/">
+        <a [routerLink]="['/login']" href="/">
           <strong>Sign in</strong>
         </a>
       </p>
       <div class="content__footer">
         <p>
           By clicking "Sign up" button above you agree to our
-          <a href="/">
+          <a href="https://www.iubenda.com/privacy-policy/93551682">
             <strong>terms of use</strong>
           </a>
         </p>
