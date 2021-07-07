@@ -21,6 +21,7 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { TeacherComponent } from './components/teacher/teacher.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SignupComponent } from './components/signup/signup.component';
     HowItWorksComponent,
     PageNotFoundComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TeacherComponent
   ],
   imports: [
     BrowserModule,
