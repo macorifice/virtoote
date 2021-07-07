@@ -181,3 +181,7 @@ a {
   color: #34495E;
   border-color: #34495E;
 }
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

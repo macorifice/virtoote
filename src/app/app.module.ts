@@ -22,6 +22,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TeacherComponent } from './components/teacher/teacher.component';
     MatCardModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
