@@ -61,7 +61,7 @@ export class FooterComponent implements OnInit {
     }
     setTimeout(() => {
       this.loading = false;
-    }, 2500);
+    }, 3000);
   }
 
 }

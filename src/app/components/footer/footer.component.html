@@ -1,4 +1,4 @@
-<div style="padding: 3%" *ngIf="!loading && !isMobile">
+<!-- <div style="padding: 3%" *ngIf="!loading && !isMobile">
   <mat-divider></mat-divider>
   <mat-grid-list cols="4" rowHeight="80px">
     <mat-grid-tile
@@ -65,4 +65,26 @@
     </p>
     <p class="copyright">© Virtoote, Inc. All rights reserved.</p>
   </div>
-</div>
+</div> -->
+<mat-toolbar-row style="padding: 3%" *ngIf="!loading && !isMobile">
+  <span>© Virtoote, Inc. All rights reserved.</span>
+  <span class="example-spacer"></span>
+  <a href="https://www.facebook.com/Virtoote-101245872152686">
+    <mat-icon svgIcon="facebook"></mat-icon>
+  </a>
+  <a href="https://www.instagram.com/virtoote/">
+    <mat-icon svgIcon="instagram"></mat-icon>
+  </a>
+  <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon> -->
+</mat-toolbar-row>
+<mat-toolbar-row class="copyright-mobile" *ngIf="!loading && isMobile">
+  <span>© Virtoote, Inc. All rights reserved.</span>
+  <span class="example-spacer"></span>
+  <a href="https://www.facebook.com/Virtoote-101245872152686">
+    <mat-icon svgIcon="facebook"></mat-icon>
+  </a>
+  <a href="https://www.instagram.com/virtoote/">
+    <mat-icon svgIcon="instagram"></mat-icon>
+  </a>
+  <!-- <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon> -->
+</mat-toolbar-row>
