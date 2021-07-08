@@ -1,24 +1,49 @@
 <mat-spinner color="accent" class="center" *ngIf="loading"></mat-spinner>
 
-<div style="padding: 5%" *ngIf="!loading && isMobile">
-  <div class="searchBox">
-    <input class="searchInput" type="text" name="" placeholder="Search" />
-    <button class="searchButton" href="#">
-      <i class="material-icons"> search </i>
-    </button>
-  </div>
-</div>
+<app-searchbar></app-searchbar>
 
-<div style="padding: 3%" *ngIf="!loading && !isMobile">
-  <div class="searchBox">
-    <input class="searchInput" type="text" name="" placeholder="Search" />
-    <button class="searchButton" href="#">
-      <i class="material-icons"> search </i>
-    </button>
+<div *ngIf="!loading" class="container">
+    <div class="card a">
+      <span></span>
+      <div class="content">
+        <h2>Simone Sorte</h2>
+        <h4>Digital Marketing</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aliquid harum molestiae inventore id quaerat earum error quidem voluptates velit!</p>
+        <a [routerLink]="['/teacher', 1]" >More</a>
+        <div class="avatar">
+          <img src="https://static.wixstatic.com/media/8e48bf_af10d8bd7837407382b4ef9ce4c11297~mv2.jpeg/v1/crop/x_100,y_24,w_209,h_209/fill/w_132,h_132,al_c,q_80,usm_0.66_1.00_0.01/WhatsApp%20Image%202021-05-04%20at%2018_54_18_jp.webp" alt="">
+        </div>
+      </div>
+    </div>
+  
+    <div class="card b">
+      <span></span>
+      <div class="content">
+        <h2>Marinela Marku</h2>
+        <h4>Social Media Manager</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aliquid harum molestiae inventore id quaerat earum error quidem voluptates velit!</p>
+        <a [routerLink]="['/teacher', 2]">More</a>
+        <div class="avatar">
+          <img src="https://static.wixstatic.com/media/8e48bf_8f762f7244fb4eefb4cb1096b838fc29~mv2.jpeg/v1/fill/w_132,h_132,al_c,q_80,usm_0.66_1.00_0.01/WhatsApp%20Image%202021-05-22%20at%2009_45_13_jp.webp" alt="">
+        </div>
+      </div>
+    </div>
+  
+    <div class="card c">
+      <span></span>
+      <div class="content">
+        <h2>Alessandro Martelli</h2>
+        <h4>Marketing</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aliquid harum molestiae inventore id quaerat earum error quidem voluptates velit!</p>
+        <a [routerLink]="['/teacher', 3]">More</a>
+        <div class="avatar">
+          <img src="https://static.wixstatic.com/media/8e48bf_9169d5b529e64911a16fa096b27f685c~mv2.png/v1/fill/w_135,h_134,al_c,q_85,usm_0.66_1.00_0.01/82975427_2622018024551857_26541928214513.webp" alt="">
+        </div>
+      </div>
+    </div>
+  
   </div>
-</div>
-
-<div *ngIf="!loading" class="cards-list">
+<!-- <div *ngIf="!loading" class="cards-list">
   <mat-card [routerLink]="['/teacher', 1]" class="card">
     <div class="card_image">
       <img src="https://media.giphy.com/media/YRzQnWzbn4WIxd3ZYx/giphy.gif" />
@@ -66,12 +91,12 @@
       <p>Stefano Di Cecco</p>
     </div>
   </mat-card>
-</div>
+</div> -->
 <div style="padding: 5%;">
   <mat-divider *ngIf="!loading" style="margin: 5% 0 5% 0;"></mat-divider>
 </div>
 
-<div *ngIf="!loading" class="cards-list">
+<!-- <div *ngIf="!loading" class="cards-list">
   <div>
     <h2 class="second-title">
       Top Sellers
@@ -110,4 +135,4 @@
       <p>Fred Astaire</p>
     </div>
   </mat-card>
-</div>
+</div> -->

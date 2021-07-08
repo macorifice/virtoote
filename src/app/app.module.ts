@@ -23,6 +23,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatRadioModule } from '@angular/material/radio';
     PageNotFoundComponent,
     LoginComponent,
     SignupComponent,
-    TeacherComponent
+    TeacherComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
