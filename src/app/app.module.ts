@@ -1,3 +1,4 @@
+import { ExpertService } from './shared/services/expert.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -24,6 +25,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { TeacherComponent } from './components/teacher/teacher.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { ApiService } from './shared/services/api.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,10 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     MatMenuModule,
     MatRadioModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    ExpertService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

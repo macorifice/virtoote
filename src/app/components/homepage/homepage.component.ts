@@ -1,3 +1,4 @@
+import { ExpertService } from './../../shared/services/expert.service';
 import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
@@ -28,11 +29,15 @@ export class HomepageComponent implements OnInit {
   loading: boolean = true;
   isMobile: boolean = false;
   
-  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private expertService: ExpertService) {
     this.matIconRegistry.addSvgIcon(
       "tutorial",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/influencer.svg")
     );
+    this.expertService.experts$.subscribe(experts => {
+      console.log(experts);
+    });
+
   }
 
   ngOnInit(): void {
