@@ -22,7 +22,7 @@ import { HowItWorksComponent } from './components/how-it-works/how-it-works.comp
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { TeacherComponent } from './components/teacher/teacher.component';
+import { ExpertComponent } from './components/expert/expert.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { ApiService } from './shared/services/api.service';
@@ -37,7 +37,7 @@ import { ApiService } from './shared/services/api.service';
     PageNotFoundComponent,
     LoginComponent,
     SignupComponent,
-    TeacherComponent,
+    ExpertComponent,
     SearchbarComponent
   ],
   imports: [

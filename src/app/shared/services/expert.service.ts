@@ -16,7 +16,6 @@ export class ExpertService {
   async getExperts() {
     try {
       const experts = await this.apiService.get(`experts`);
-      console.log(experts);
       this.experts$.next(experts);
     } catch (err) {
       console.log('Could not load experts.', err);

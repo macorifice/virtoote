@@ -1,7 +1,7 @@
 import { ExpertService } from './../../shared/services/expert.service';
 import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from "@angular/material/icon";
-import { DomSanitizer } from "@angular/platform-browser";
+import { Expert } from 'src/app/shared/model/expert.model';
+import { Subscription } from 'rxjs';
 
 export interface Tile {
   id: number;
@@ -13,13 +13,11 @@ export interface Tile {
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.scss']
+  styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit {
-  items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
-  
   tiles: Tile[] = [
-    {id: 1, cols: 3, rows: 2, color: 'transparent'},
+    { id: 1, cols: 3, rows: 2, color: 'transparent' },
     // {id: 2, cols: 3, rows: 4, color: 'transparent'},
     // {id: 3, cols: 1, rows: 1, color: 'transparent'},
     // {id: 4, cols: 1, rows: 1, color: 'transparent'},
@@ -28,27 +26,27 @@ export class HomepageComponent implements OnInit {
 
   loading: boolean = true;
   isMobile: boolean = false;
-  
-  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private expertService: ExpertService) {
-    this.matIconRegistry.addSvgIcon(
-      "tutorial",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/influencer.svg")
-    );
-    this.expertService.experts$.subscribe(experts => {
-      console.log(experts);
-    });
 
+  subscriptions: Subscription[] = [];
+  expertsList: Expert[];
+
+  constructor(private expertService: ExpertService) {
+    const expertSub = this.expertService.experts$.subscribe((experts) => {
+      this.expertsList = experts;
+      this.loading = false;
+    });
+    this.subscriptions.push(expertSub);
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.loading = false;
-    }, 2500);
-
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
       // true for mobile device
       this.isMobile = true;
-    }else{
+    } else {
       // false for not mobile device
       this.isMobile = false;
     }

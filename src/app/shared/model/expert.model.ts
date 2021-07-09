@@ -5,5 +5,6 @@ export interface Expert {
     label: string;
     description: string;
     website: string;
+    profileImg: string;
   }
   
