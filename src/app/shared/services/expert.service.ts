@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject, Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { Expert } from './../model/expert.model';
 
@@ -8,7 +8,7 @@ export class ExpertService {
   conflictError = new Subject<any[]>();
   readonly experts$ = new BehaviorSubject<Expert[]>(null);
   readonly expert$ = new BehaviorSubject<Expert>(null);
-  readonly selectedExpertId$ = new BehaviorSubject<string>(null);
+  readonly selectedExpertId$ = new BehaviorSubject<number>(null);
   readonly selectedExpert$ = new BehaviorSubject<Expert>(null);
 
   constructor(private apiService: ApiService) {}
@@ -23,7 +23,7 @@ export class ExpertService {
   }
 
   async getExpert(expertId: number) {
-    return await this.apiService.get(`/experts/${expertId}`);
+    return await this.apiService.get(`experts/${expertId}`);
   }
 
   async selectExpert(expertId: number) {
@@ -32,6 +32,18 @@ export class ExpertService {
         return expert.id === expertId;
       });
       this.selectedExpert$.next(expert);
+    }
+  }
+
+  async selectExpertByTerm(searchTerm: string) {
+    if (this.experts$.value && this.experts$.value.length > 0) {
+      const experts = this.experts$.value.filter((expert) => {
+        return (
+          expert.label.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          expert.description.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      });
+      this.experts$.next(experts);
     }
   }
 

@@ -29,12 +29,14 @@ export class HomepageComponent implements OnInit {
 
   subscriptions: Subscription[] = [];
   expertsList: Expert[];
+  selectedExpert: number;
 
   constructor(private expertService: ExpertService) {
     const expertSub = this.expertService.experts$.subscribe((experts) => {
       this.expertsList = experts;
       this.loading = false;
     });
+
     this.subscriptions.push(expertSub);
   }
 
@@ -49,6 +51,15 @@ export class HomepageComponent implements OnInit {
     } else {
       // false for not mobile device
       this.isMobile = false;
+    }
+  }
+
+  onKey(searchTerm: string) {
+    if (searchTerm === null || searchTerm === undefined || searchTerm === '') {
+      this.expertService.getExperts();
+      this.expertService.refetchExperts();
+    } else {
+      this.expertService.selectExpertByTerm(searchTerm);
     }
   }
 }

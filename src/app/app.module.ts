@@ -24,7 +24,6 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ExpertComponent } from './components/expert/expert.component';
 import { MatRadioModule } from '@angular/material/radio';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { ApiService } from './shared/services/api.service';
 
 @NgModule({
@@ -37,8 +36,7 @@ import { ApiService } from './shared/services/api.service';
     PageNotFoundComponent,
     LoginComponent,
     SignupComponent,
-    ExpertComponent,
-    SearchbarComponent
+    ExpertComponent
   ],
   imports: [
     BrowserModule,
