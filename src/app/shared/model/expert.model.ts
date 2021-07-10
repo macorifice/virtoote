@@ -1,5 +1,5 @@
 export interface Expert {
-    id: number;
+    id: string;
     firstName: string;
     lastName: string;
     label: string;

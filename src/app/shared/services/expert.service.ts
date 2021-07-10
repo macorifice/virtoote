@@ -22,11 +22,11 @@ export class ExpertService {
     }
   }
 
-  async getExpert(expertId: number) {
+  async getExpert(expertId: string) {
     return await this.apiService.get(`experts/${expertId}`);
   }
 
-  async selectExpert(expertId: number) {
+  async selectExpert(expertId: string) {
     if (this.experts$.value && this.experts$.value.length > 0) {
       const expert = this.experts$.value.find((expert) => {
         return expert.id === expertId;
