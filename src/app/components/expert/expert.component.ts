@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatMenu } from '@angular/material/menu';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Expert } from 'src/app/shared/model/expert.model';
@@ -17,9 +16,6 @@ export class ExpertComponent implements OnInit {
 
   loading: boolean = true;
   subscriptions: Subscription[] = [];
-
-  bookMenu: MatMenu;
-  socialMenu: MatMenu;
 
   constructor(
     private route: ActivatedRoute,

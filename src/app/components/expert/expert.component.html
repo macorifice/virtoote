@@ -18,19 +18,21 @@
     <mat-grid-list cols="2" rowHeight="2:1">
       <div class="example-button-row">
         <mat-grid-tile>
-          <button mat-raised-button [matMenuTriggerFor]="bookMenu">BOOK A CALL</button>
-          <mat-menu #menu="matMenu">
+          <button mat-button [matMenuTriggerFor]="belowMenu">
+            BOOK A CALL
+          </button>
+          <mat-menu #belowMenu="matMenu" yPosition="below">
             <button mat-menu-item>STANDARD</button>
             <button mat-menu-item>MENTORSHIP</button>
             <button mat-menu-item>COACHING SESSION</button>
           </mat-menu>
         </mat-grid-tile>
-        <mat-grid-tile
-          ><button mat-raised-button>SHARE PROFILE</button></mat-grid-tile
+        <mat-grid-tile>
+          <button mat-raised-button>SHARE PROFILE</button></mat-grid-tile
         >
         <mat-grid-tile>
-          <button mat-raised-button [matMenuTriggerFor]="socialMenu">LINK</button>
-          <mat-menu #menu="matMenu">
+          <button mat-button [matMenuTriggerFor]="aboveMenu">LINK</button>
+          <mat-menu #aboveMenu="matMenu" yPosition="above">
             <button mat-menu-item>WEBSITE</button>
             <button mat-menu-item>FACEBOOK</button>
             <button mat-menu-item>INSTAGRAM</button>
