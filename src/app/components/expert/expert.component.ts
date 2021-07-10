@@ -10,7 +10,7 @@ import { ExpertService } from 'src/app/shared/services/expert.service';
   styleUrls: ['./expert.component.scss'],
 })
 export class ExpertComponent implements OnInit {
-  expertIdFromRoute: number | undefined;
+  expertIdFromRoute: string | undefined;
   expert: any;
   experts: Expert[] = [];
 
@@ -22,7 +22,7 @@ export class ExpertComponent implements OnInit {
     private expertService: ExpertService
   ) {
     const routeParams = this.route.snapshot.paramMap;
-    this.expertIdFromRoute = Number(routeParams.get('expertId'));
+    this.expertIdFromRoute = routeParams.get('expertId');
 
     this.expertService.selectExpert(this.expertIdFromRoute);
 
