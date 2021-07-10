@@ -10,7 +10,7 @@ import { ExpertService } from 'src/app/shared/services/expert.service';
   styleUrls: ['./expert.component.scss'],
 })
 export class ExpertComponent implements OnInit {
-  expertIdFromRoute: string | undefined;
+  expertIdFromRoute: string;
   expert: any;
   experts: Expert[] = [];
 

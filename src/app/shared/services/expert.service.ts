@@ -29,7 +29,7 @@ export class ExpertService {
   async selectExpert(expertId: string) {
     if (this.experts$.value && this.experts$.value.length > 0) {
       const expert = this.experts$.value.find((expert) => {
-        return expert.id === expertId;
+        return expert.id == expertId;
       });
       this.selectedExpert$.next(expert);
     }
