@@ -1,45 +1,183 @@
-<mat-card style="background-color: #121212" class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image">
-      <img mat-card-image src="{{ expert.profileImg }}" alt="Photo of expert" />
-    </div>
-    <mat-card-title
-      >{{ expert.firstName }} {{ expert.lastName }}</mat-card-title
+<div *ngIf="isMobile" style="padding: 5%">
+  <mat-card style="background-color: #121212" class="example-card">
+    <mat-card-header>
+      <mat-card-title
+        >{{ expert.firstName }} {{ expert.lastName }}</mat-card-title
+      >
+      <mat-card-subtitle>{{ expert.label }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ expert.profileImg }}" alt="Photo of expert" />
+    <mat-card-content>
+      <p>
+        {{ expert.description }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-grid-list cols="2" rowHeight="2:1">
+        <div class="example-button-row">
+          <mat-grid-tile>
+            <button mat-button [matMenuTriggerFor]="belowMenu">
+              <mat-icon>event</mat-icon>
+              BOOK A CALL
+            </button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+              <button mat-menu-item>STANDARD</button>
+              <button mat-menu-item>MENTORSHIP</button>
+              <button mat-menu-item>COACHING SESSION</button>
+            </mat-menu>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-button>
+              <mat-icon>share</mat-icon>
+              SHARE PROFILE
+            </button>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <button mat-button [matMenuTriggerFor]="aboveMenu">
+              <mat-icon>link</mat-icon>
+              LINK
+            </button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+              <button mat-menu-item>WEBSITE</button>
+              <button mat-menu-item>FACEBOOK</button>
+              <button mat-menu-item>INSTAGRAM</button>
+            </mat-menu>
+          </mat-grid-tile>
+          <mat-grid-tile
+            ><button mat-button>
+              <mat-icon>reviews</mat-icon>
+              REVIEW
+            </button>
+          </mat-grid-tile>
+        </div>
+      </mat-grid-list>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div *ngIf="!isMobile" style="padding: 5%">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <mat-grid-tile
+      *ngFor="let tile of tiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color"
     >
-    <mat-card-subtitle>{{ expert.label }}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="{{ expert.profileImg }}" alt="Photo of expert" />
-  <mat-card-content>
-    <p>
-      {{ expert.description }}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <mat-grid-list cols="2" rowHeight="2:1">
-      <div class="example-button-row">
-        <mat-grid-tile>
-          <button mat-button [matMenuTriggerFor]="belowMenu">
-            BOOK A CALL
-          </button>
-          <mat-menu #belowMenu="matMenu" yPosition="below">
-            <button mat-menu-item>STANDARD</button>
-            <button mat-menu-item>MENTORSHIP</button>
-            <button mat-menu-item>COACHING SESSION</button>
-          </mat-menu>
-        </mat-grid-tile>
-        <mat-grid-tile>
-          <button mat-raised-button>SHARE PROFILE</button></mat-grid-tile
-        >
-        <mat-grid-tile>
-          <button mat-button [matMenuTriggerFor]="aboveMenu">LINK</button>
-          <mat-menu #aboveMenu="matMenu" yPosition="above">
-            <button mat-menu-item>WEBSITE</button>
-            <button mat-menu-item>FACEBOOK</button>
-            <button mat-menu-item>INSTAGRAM</button>
-          </mat-menu>
-        </mat-grid-tile>
-        <mat-grid-tile><button mat-raised-button>REVIEW</button></mat-grid-tile>
+      <h1 *ngIf="tile.id === 1" class="title">
+        {{ expert.firstName }} {{ expert.lastName }}
+      </h1>
+      <div *ngIf="tile.id === 3">
+        <mat-card style="background-color: #121212" class="example-card">
+          <mat-card-header>
+            <mat-card-title></mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+          </mat-card-header>
+          <img
+            mat-card-image
+            src="{{ expert.profileImg }}"
+            alt="Photo of expert"
+          />
+          <mat-card-content>
+            <p class="sub-title">
+              {{ expert.label }}
+
+              <mat-card-actions>
+                <mat-grid-list cols="2" rowHeight="2:1">
+                  <div class="example-button-row">
+                    <mat-grid-tile>
+                      <button
+                        mat-button
+                        [matMenuTriggerFor]="belowMenu"
+                        mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon"
+                      >
+                        <mat-icon>event</mat-icon>
+                      </button>
+                      <mat-menu #belowMenu="matMenu" yPosition="below">
+                        <button mat-menu-item>STANDARD</button>
+                        <button mat-menu-item>MENTORSHIP</button>
+                        <button mat-menu-item>COACHING SESSION</button>
+                      </mat-menu>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                      <button
+                        mat-button
+                        mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon"
+                      >
+                        <mat-icon>share</mat-icon>
+                      </button>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                      <button
+                        mat-button
+                        [matMenuTriggerFor]="aboveMenu"
+                        mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon"
+                      >
+                        <mat-icon>link</mat-icon>
+                      </button>
+                      <mat-menu #aboveMenu="matMenu" yPosition="above">
+                        <button mat-menu-item>WEBSITE</button>
+                        <button mat-menu-item>FACEBOOK</button>
+                        <button mat-menu-item>INSTAGRAM</button>
+                      </mat-menu>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                      <button
+                        mat-icon-button
+                        aria-label="Example icon button with a vertical three dot icon"
+                      >
+                        <mat-icon>reviews</mat-icon>
+                      </button>
+                    </mat-grid-tile>
+                  </div>
+                </mat-grid-list>
+              </mat-card-actions>
+            </p>
+          </mat-card-content>
+        </mat-card>
       </div>
-    </mat-grid-list>
-  </mat-card-actions>
-</mat-card>
+      <div *ngIf="tile.id === 2">
+        <section>
+          <div class="example-button-row">
+            <button mat-stroked-button color="accent">I miei servizi</button>
+          </div>
+        </section>
+        <section>
+          <div class="example-button-row">
+            <button mat-stroked-button color="accent">Il mio sito</button>
+          </div>
+        </section>
+        <section>
+          <div class="example-button-row">
+            <button mat-stroked-button color="accent">Cosa dicono di me</button>
+          </div>
+        </section>
+      </div>
+      <div class="description" *ngIf="tile.id === 4">
+        <p>
+          {{ expert.description }}
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged.
+        </p>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
