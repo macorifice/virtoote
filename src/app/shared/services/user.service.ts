@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject, Observable } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { ApiService } from './api.service';
 import { User } from './../model/user.model';
 
@@ -54,5 +54,12 @@ export class UserService {
   async deleteUser(userId: number) {
     const deletedUser = await this.apiService.delete(`users/${userId}`);
     return deletedUser;
+  }
+
+  async checkUser(username: string, password: string) {
+    return await this.apiService.post('users/authenticate', {
+      username,
+      password,
+    });
   }
 }

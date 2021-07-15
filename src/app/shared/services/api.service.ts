@@ -11,10 +11,11 @@ export class ApiService {
   private forbiddenPath: string;
 
   constructor(private http: HttpClient, @Inject(DOCUMENT) private document: any) {
-    this.loginEndpoint = 'links/login';
+    this.loginEndpoint = '/login';
     this.forbiddenPath = '/forbidden/index.html';
 
     this.apiLocation = 'https://serene-scrubland-19872.herokuapp.com/';
+    // this.apiLocation = 'http://localhost:3000';
 
     this.headers = new HttpHeaders();
 
@@ -131,7 +132,7 @@ export class ApiService {
           } else if (err.status === 409) {
             resolve({ ...err.error, status: err.status });
           } else {
-            console.log('Error: API Service - ' + JSON.stringify(err.error));
+            console.log('Error: API Service - ' + JSON.stringify(err));
             reject(err);
           }
         },

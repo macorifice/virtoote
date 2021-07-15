@@ -29,7 +29,7 @@
       </a>
       <a routerLink="/login" mat-menu-item href="#">
         <mat-icon>face</mat-icon>
-        <span>LOGIN</span>
+        <span> {{isLoggedIn ? 'PROFILE' : 'LOGIN'}} </span>
       </a>
       <a mat-menu-item href="https://www.iubenda.com/privacy-policy/93551682">
         <mat-icon>privacy_tip</mat-icon>
@@ -41,6 +41,10 @@
       >
         <mat-icon>policy</mat-icon>
         <span>COOKIE POLICY</span>
+      </a>
+      <a *ngIf="isLoggedIn" routerLink="/logout" mat-menu-item href="#">
+        <mat-icon>logout</mat-icon>
+        <span>LOGOUT</span>
       </a>
     </mat-menu>
   </div>

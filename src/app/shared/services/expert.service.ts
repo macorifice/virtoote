@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject, Observable } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { ApiService } from './api.service';
 import { Expert } from './../model/expert.model';
 

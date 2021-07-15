@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { MatDividerModule } from '@angular/material/divider';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -25,6 +25,16 @@ import { SignupComponent } from './components/signup/signup.component';
 import { ExpertComponent } from './components/expert/expert.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { ApiService } from './shared/services/api.service';
+import { UserService } from './shared/services/user.service';
+import { ProfileComponent } from './components/profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './components/alert/alert.component';
+
+import { JwtInterceptor, ErrorInterceptor } from './helpers';
+import { BackendProvider } from './helpers';
+import { RegisterComponent } from './components/register/register.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -36,7 +46,11 @@ import { ApiService } from './shared/services/api.service';
     PageNotFoundComponent,
     LoginComponent,
     SignupComponent,
-    ExpertComponent
+    ExpertComponent,
+    ProfileComponent,
+    AlertComponent,
+    RegisterComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -52,11 +66,17 @@ import { ApiService } from './shared/services/api.service';
     MatProgressSpinnerModule,
     MatInputModule,
     MatMenuModule,
-    MatRadioModule
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   providers: [
     ApiService,
-    ExpertService
+    ExpertService,
+    UserService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

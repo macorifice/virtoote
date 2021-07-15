@@ -1,37 +1,63 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from "@angular/platform-browser";
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
+
+import { AuthenticationService } from '../../shared/services/auth.service';
+import { AlertService } from '../../shared/services/alert.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
-})
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
+  })
+
 export class LoginComponent implements OnInit {
+    loginForm: FormGroup;
+    loading = false;
+    submitted = false;
+    returnUrl: string;
 
-  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    this.matIconRegistry.addSvgIcon(
-      "facebook",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/facebook.svg")
-    );
+    constructor(
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private authenticationService: AuthenticationService,
+        private alertService: AlertService
+    ) {
+        // redirect to home if already logged in
+        if (this.authenticationService.currentUserValue) { 
+            this.router.navigate(['/profile']);
+        }
+    }
 
-    this.matIconRegistry.addSvgIcon(
-      "google",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/google.svg")
-    );
+    ngOnInit() {
+        this.loginForm = this.formBuilder.group({
+            username: ['', Validators.required],
+            password: ['', Validators.required]
+        });
 
-    this.matIconRegistry.addSvgIcon(
-      "twitter",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/twitter.svg")
-    );
+        // get return url from route parameters or default to '/'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/profile';
+    }
 
-    this.matIconRegistry.addSvgIcon(
-      "linkedin",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../../../assets/linkedin.svg")
-    );
-  }
+    // convenience getter for easy access to form fields
+    get f() { return this.loginForm.controls; }
 
-  ngOnInit(): void {
-  }
+    onSubmit() {
+        this.submitted = true;
 
+        // stop here if form is invalid
+        if (this.loginForm.invalid) {
+            return;
+        }
+
+        this.loading = true;
+        this.authenticationService.login(this.f.username.value, this.f.password.value)
+            .then(() => this.router.navigate([this.returnUrl]))
+            .catch(error => {
+                this.alertService.error(error);
+                this.loading = false;
+            });
+    }
 }

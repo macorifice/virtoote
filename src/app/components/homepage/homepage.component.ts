@@ -33,7 +33,8 @@ export class HomepageComponent implements OnInit {
 
   constructor(private expertService: ExpertService) {
     const expertSub = this.expertService.experts$.subscribe((experts) => {
-      this.expertsList = experts;
+      if(experts)
+      this.expertsList = experts.filter(e => e.label !== '');
       this.loading = false;
     });
 
