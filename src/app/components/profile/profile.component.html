@@ -1,3 +1,127 @@
-<div *ngIf="isExpert">Profilo esperto</div>
+<mat-list *ngIf="isExpert">
+  <div mat-subheader>User</div>
+  <mat-list-item>
+    <mat-icon mat-list-icon>face</mat-icon>
+    <div mat-line>Full name</div>
+    <div mat-line>{{ user[0].firstName }} {{ user[0].lastName }}</div>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon mat-list-icon>email</mat-icon>
+    <div mat-line>Email</div>
+    <div mat-line>{{ user[0].email }}</div>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon mat-list-icon>account_circle</mat-icon>
+    <div mat-line>Username</div>
+    <div mat-line>{{ user[0].username }}</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <div mat-subheader>Profile</div>
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelServicesOpenState = true"
+      (closed)="panelServicesOpenState = false"
+    >
+      <mat-expansion-panel-header class="disable_ripple">
+        <mat-panel-title>
+          <mat-list-item>
+            <mat-icon mat-list-icon>miscellaneous_services</mat-icon>
+            <div mat-line>I miei servizi</div>
+          </mat-list-item>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        <mat-list-item>
+          <mat-icon mat-list-icon>-</mat-icon>
+          <div mat-line>Consulenza standard</div>
+          <div mat-line>1h 80€</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>-</mat-icon>
+          <div mat-line>Mentorship</div>
+          <div mat-line>1h 80€</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>-</mat-icon>
+          <div mat-line>Affiancamento 5 sessioni</div>
+          <div mat-line>1h 280€</div>
+        </mat-list-item>
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelSiteOpenState = true"
+      (closed)="panelSiteOpenState = false"
+    >
+      <mat-expansion-panel-header class="disable_ripple">
+        <mat-panel-title>
+          <mat-list-item>
+            <mat-icon mat-list-icon>web</mat-icon>
+            <div mat-line>Il mio sito</div>
+          </mat-list-item>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        <mat-list-item>
+          <mat-icon mat-list-icon>-</mat-icon>
+          <div mat-line>www.mywebsite.it</div>
+        </mat-list-item>
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="panelSocialOpenState = true"
+      (closed)="panelSocialOpenState = false"
+    >
+      <mat-expansion-panel-header class="disable_ripple">
+        <mat-panel-title>
+          <mat-list-item>
+            <mat-icon mat-list-icon>link</mat-icon>
+            <div mat-line>I miei social</div>
+          </mat-list-item>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        <mat-list-item>
+          <mat-icon mat-list-icon>-</mat-icon>
+          <div mat-line>https://www.facebook.com/digitalflow.it/</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>-</mat-icon>
+          <div mat-line>https://www.instagram.com/digitalflow.it/</div>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-icon mat-list-icon>-</mat-icon>
+          <div mat-line>
+            https://www.linkedin.com/company/digital-flow-marketing/about/
+          </div>
+        </mat-list-item>
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-divider></mat-divider>
+  <div mat-subheader>Notes</div>
+  <mat-list-item *ngFor="let note of notes">
+    <mat-icon mat-list-icon>book</mat-icon>
+    <div mat-line>{{ note.name }}</div>
+    <div mat-line>{{ note.updated | date }}</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <div mat-subheader>Upload</div>
+  <mat-list-item>
+    <mat-icon mat-list-icon>upload</mat-icon>
+    <div mat-line>
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button color="accent">Upload documenti</button>
+        </div>
+      </section>
+    </div>
+  </mat-list-item>
+</mat-list>
 
 <div *ngIf="!isExpert">Profilo utente</div>

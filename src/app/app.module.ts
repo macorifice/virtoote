@@ -35,6 +35,9 @@ import { BackendProvider } from './helpers';
 import { RegisterComponent } from './components/register/register.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatExpansionModule
   ],
   providers: [
     ApiService,
